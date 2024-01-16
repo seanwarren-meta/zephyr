@@ -25,7 +25,7 @@ function(gen_kobj gen_dir_out)
     $<$<BOOL:${CMAKE_VERBOSE_MAKEFILE}>:--verbose>
     DEPENDS
     ${ZEPHYR_BASE}/scripts/build/gen_kobject_list.py
-    ${PARSE_SYSCALLS_TARGET}
+    ${struct_tags_json}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     )
   add_custom_target(${KOBJ_TYPES_H_TARGET} DEPENDS ${KOBJ_TYPES} ${KOBJ_OTYPE})
